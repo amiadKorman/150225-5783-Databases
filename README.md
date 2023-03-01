@@ -7,3 +7,6 @@ Here we will have all the SQL scripts and the entities to build database for the
 * Player
 * Team coach
 * Judge
+* Throw
+* Team Manager
+* Coach assistant
