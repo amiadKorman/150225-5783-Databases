@@ -1,9 +1,9 @@
 # 150225-5783-Databases
 
-## Our project is: Basketball Leagues!
+## The project is: Basketball League!
 Here we will have all the SQL scripts and the entities to build database for the mini-project
 
-### The entities are: (add your own)
+### Our entities are:
 * Player
 * Team coach
 * Judge
