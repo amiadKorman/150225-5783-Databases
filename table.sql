@@ -43,7 +43,7 @@ CREATE TABLE Player
   weight INT NOT NULL,
   height INT NOT NULL,
   position VARCHAR(2) NOT NULL,
-  number INT NOT NULL,
+  Shirt_number INT NOT NULL,
   PRIMARY KEY (ID),
   FOREIGN KEY (ID) REFERENCES Coach(ID)
 );
