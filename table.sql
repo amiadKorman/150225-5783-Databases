@@ -4,7 +4,7 @@ CREATE TABLE Judge
   Fname VARCHAR(10) NOT NULL,
   Lname VARCHAR(10) NOT NULL,
   age INT NOT NULL,
-  gender VARCHAR(10) NOT NULL,
+  gender VARCHAR(20) NOT NULL,
   nationality VARCHAR(2) NOT NULL,
   experience INT NOT NULL,
   matches INT NOT NULL,
