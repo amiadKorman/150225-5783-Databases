@@ -1,8 +1,8 @@
 CREATE TABLE Judge
 (
   ID INT NOT NULL,
-  Fname VARCHAR(10) NOT NULL,
-  Lname VARCHAR(10) NOT NULL,
+  Fname VARCHAR(20) NOT NULL,
+  Lname VARCHAR(20) NOT NULL,
   age INT NOT NULL,
   gender VARCHAR(20) NOT NULL,
   nationality VARCHAR(2) NOT NULL,
@@ -14,11 +14,11 @@ CREATE TABLE Judge
 CREATE TABLE Coach
 (
   ID INT NOT NULL,
-  Fname VARCHAR(10) NOT NULL,
-  Lname VARCHAR(10) NOT NULL,
+  Fname VARCHAR(20) NOT NULL,
+  Lname VARCHAR(20) NOT NULL,
   age INT NOT NULL,
   gender VARCHAR(20) NOT NULL,
-  nationality VARCHAR(2) NOT NULL,
+  nationality VARCHAR(3) NOT NULL,
   experience INT NOT NULL,
   matches INT NOT NULL,
   wins INT NOT NULL,
@@ -30,11 +30,11 @@ CREATE TABLE Coach
 CREATE TABLE Player
 (
   ID INT NOT NULL,
-  Fname VARCHAR(10) NOT NULL,
-  Lname VARCHAR(10) NOT NULL,
+  Fname VARCHAR(20) NOT NULL,
+  Lname VARCHAR(20) NOT NULL,
   age INT NOT NULL,
   gender VARCHAR(20) NOT NULL,
-  nationality VARCHAR(2) NOT NULL,
+  nationality VARCHAR(3) NOT NULL,
   experience INT NOT NULL,
   matches INT NOT NULL,
   wins INT NOT NULL,
