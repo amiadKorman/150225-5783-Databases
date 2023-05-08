@@ -1,0 +1,32 @@
+CREATE TABLE Games
+(
+	id INT PRIMARY KEY,
+	locationID INT NOT NULL,
+	homeTeamID INT NOT NULL,
+	awayTeamID INT NOT NULL,
+	date VARCHAR(10) NOT NULL,
+	hour VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE GameTeamStats
+(
+	gameID INT PRIMARY KEY,
+	teamID INT FOREIGN KEY,
+	score INT NOT NULL,
+	rebounds INT NOT NULL,
+	assists INT NOT NULL,
+	blocks INT NOT NULL,
+	steals INT NOT NULL,
+	duration INT NOT NULL,
+	isWin BOOLEAN NOT NULL
+);
+
+CREATE TABLE Awards
+(
+	awardID INT PRIMARY KEY,
+	winnerID INT FOREIGN KEY,
+	awardName VARCHAR(10) NOT NULL,
+	isPlayer BOOLEAN NOT NULL,
+	isTeam BOOLEAN NOT NULL
+);
+	
