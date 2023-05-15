@@ -11,7 +11,7 @@ CREATE TABLE Games
 CREATE TABLE GameTeamStats
 (
 	gameID INT PRIMARY KEY,
-	teamID INT,
+	teamID INT NOT NULL,
 	score INT NOT NULL,
 	rebounds INT NOT NULL,
 	assists INT NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE GameTeamStats
 CREATE TABLE Awards
 (
 	awardID INT PRIMARY KEY,
-	winnerID INT,
+	winnerID INT NOT NULL,
 	awardName VARCHAR(30) NOT NULL,
 	isPlayer BOOLEAN NOT NULL,
 	isTeam BOOLEAN NOT NULL,
