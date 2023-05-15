@@ -11,22 +11,24 @@ CREATE TABLE Games
 CREATE TABLE GameTeamStats
 (
 	gameID INT PRIMARY KEY,
-	teamID INT FOREIGN KEY,
+	teamID INT,
 	score INT NOT NULL,
 	rebounds INT NOT NULL,
 	assists INT NOT NULL,
 	blocks INT NOT NULL,
 	steals INT NOT NULL,
 	duration INT NOT NULL,
-	isWin BOOLEAN NOT NULL
+	isWin BOOLEAN NOT NULL,
+	FOREIGN KEY (gameID) REFERENCES Games(id),
+	FOREIGN KEY (teamID) REFERENCES Teams(id)
 );
 
 CREATE TABLE Awards
 (
 	awardID INT PRIMARY KEY,
-	winnerID INT FOREIGN KEY,
+	winnerID INT,
 	awardName VARCHAR(10) NOT NULL,
 	isPlayer BOOLEAN NOT NULL,
-	isTeam BOOLEAN NOT NULL
+	isTeam BOOLEAN NOT NULL,
+	FOREIGN KEY (winnerID) REFERENCES Players(id) ON DELETE CASCADE
 );
-	
