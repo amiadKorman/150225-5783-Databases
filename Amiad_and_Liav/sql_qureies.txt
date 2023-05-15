@@ -1,0 +1,37 @@
+1. Select all games that were played on a certain date:
+SELECT * FROM Games
+WHERE date = 'YYYY-MM-DD';
+--------------------------------------------------------------
+2. Select the team that won a particular game:
+SELECT teamID FROM GameTeamStats
+WHERE gameID = game_id AND isWin = TRUE;
+--------------------------------------------------------------
+3. Select the number of games played by each team:
+SELECT teamID, COUNT(*) as games_played FROM GameTeamStats
+GROUP BY teamID;
+--------------------------------------------------------------
+4. Select the total number of points scored in each game:
+SELECT gameID, SUM(score) as total_points FROM GameTeamStats
+GROUP BY gameID;
+--------------------------------------------------------------
+5. Select all games where the home team won:
+SELECT * FROM Games
+WHERE id IN (SELECT gameID FROM GameTeamStats WHERE isWin = TRUE AND teamID = homeTeamID);
+--------------------------------------------------------------
+6. Select all players who have won awards:
+SELECT Players.* FROM Players
+INNER JOIN Awards ON Players.id = Awards.winnerID
+WHERE Awards.isPlayer = TRUE;
+--------------------------------------------------------------
+7. Select the team with the most rebounds in a particular game:
+SELECT teamID, rebounds FROM GameTeamStats
+WHERE gameID = game_id
+ORDER BY rebounds DESC
+LIMIT 1;
+--------------------------------------------------------------
+8. Select the most common award won by teams:
+SELECT awardName, COUNT(*) as num_wins FROM Awards
+WHERE isTeam = TRUE
+GROUP BY awardName
+ORDER BY num_wins DESC
+LIMIT 1;
