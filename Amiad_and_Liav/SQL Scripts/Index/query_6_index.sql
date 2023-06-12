@@ -1,0 +1,1 @@
+CREATE INDEX idx_awards_winner ON Awards (winnerID, isTeam);
