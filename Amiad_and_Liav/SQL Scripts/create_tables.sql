@@ -1,11 +1,11 @@
 CREATE TABLE Games
 (
-	gameID INT PRIMARY KEY,
-	locationID INT NOT NULL,
-	homeTeamID INT NOT NULL,
-	awayTeamID INT NOT NULL,
-	gameDate VARCHAR(10) NOT NULL,
-	gameHour VARCHAR(10) NOT NULL,
+  gameID INT PRIMARY KEY,
+  locationID INT NOT NULL,
+  homeTeamID INT NOT NULL,
+  awayTeamID INT NOT NULL,
+  gameDate VARCHAR(10) NOT NULL,
+  gameHour VARCHAR(10) NOT NULL,
   FOREIGN KEY (locationID) REFERENCES chashken.stadium(stadiumid),
   FOREIGN KEY (homeTeamID) REFERENCES chashken.team(teamid),
   FOREIGN KEY (awayTeamID) REFERENCES chashken.team(teamid)
@@ -13,7 +13,8 @@ CREATE TABLE Games
 
 CREATE TABLE GameTeamStats
 (
-	gameID INT PRIMARY KEY,
+	gameTeamStatsID INT PRIMARY KEY,
+	gameID INT NOT NULL,
 	teamID INT NOT NULL,
 	score INT NOT NULL,
 	rebounds INT NOT NULL,
