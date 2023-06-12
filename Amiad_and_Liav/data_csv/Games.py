@@ -17,15 +17,14 @@ for game_id in range(1, num_games + 1):
     away_team_id = random.randint(1, num_teams)
 
     random_date = start_date + timedelta(days=random.randint(0, date_difference))
-    game_date = random_date.strftime("%Y-%m-%d")
+    game_datetime = random_date.replace(hour=random.randint(12, 22), minute=0, second=0)
 
-    random_hour = random.randint(12, 22)
-    game_hour = f"{random_hour:02d}:00"
+    game_date = game_datetime.strftime("%d-%m-%Y %H:%M:%S")
 
-    games_data.append([game_id, location_id, home_team_id, away_team_id, game_date, game_hour])
+    games_data.append([game_id, location_id, home_team_id, away_team_id, game_date])
 
 # Write Games data to CSV file
 with open('Games.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(["gameID", "locationID", "homeTeamID", "awayTeamID", "gameDate", "gameHour"])
+    writer.writerow(["gameID", "locationID", "homeTeamID", "awayTeamID", "gameDate"])
     writer.writerows(games_data)
