@@ -23,10 +23,10 @@ SELECT * FROM Games
 WHERE gameID IN (SELECT gameID FROM GameTeamStats WHERE isWin = 1 AND teamID = homeTeamID);
 --------------------------------------------------------------
 
--- 6. Select all players who have won awards:
--- SELECT Players.* FROM Players
--- INNER JOIN Awards ON Players.id = Awards.winnerID
--- WHERE Awards.isPlayer = TRUE;
+-- 6. Select all teams who have won awards:
+SELECT chashken.team.teamid, chashken.team.team_name FROM chashken.team
+INNER JOIN Awards ON chashken.team.teamid = Awards.winnerID
+WHERE Awards.isTeam = 1;
 --------------------------------------------------------------
 
 -- 7. Select the team with the most rebounds in a particular game:
